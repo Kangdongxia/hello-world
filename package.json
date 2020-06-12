@@ -75,5 +75,9 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/Kangdongxia/hello-world.git",
+  "author": "kangdongxia <2557381271@qq.com>",
+  "license": "MIT"
 }

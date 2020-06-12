@@ -165,61 +165,22 @@ export const constantRouterMap = [
         meta:{ title: '气泡框',icon: 'list'}
       }
     ]
-  }, 
+  },
   {
-    path: '/nested',
+    path: '/test',
     component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: '菜单',
-      icon: 'nested'
-    },
+    name: '练习样例',
+    meta: { title: '练习样例'},
     children: [
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: '菜单1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: '菜单1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: '菜单1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: '菜单1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: '菜单1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: '菜单1-3' }
-          }
-        ]
+        path: '/test/jigsaw',
+        component: () => import('@/views/test/jigsaw'),
+        meta: { title: '拼图游戏', icon: 'nested'}
       },
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        meta: { title: '菜单2' }
+        path: '/test/formValidate',
+        component: () => import('@/views/test/formValidate'),
+        meta: { title: '表单校验', icon: 'nested'}
       }
     ]
   }
@@ -234,16 +195,16 @@ export default new Router({
 export const asyncRouterMap = [
   /** When your routing table is too long, you can split it into small modules**/
   {
-    path: '/form',
+    path: '/treeStructure',
     component: Layout,
-    redirect: '/form/index',
-    name: '表单',
-    meta: { title: '表单', roles: ['admin', 'editor'] },
+    redirect: '/treeNode/index',
+    name: 'treeStructure',
+    meta: { title: '树形结构', roles: ['admin'], icon: 'link' },
     children: [
       {
-        path: '/form/index',
-        component: () => import('@/views/form/index'),
-        meta: { title: '表单', icon: 'form', roles: ['admin', 'editor'] }
+        path: '/treeNode/index',
+        component: () => import('@/views/tree/index'),
+        meta: { title: '树形结构', icon: 'tree' }
       }
     ]
   },

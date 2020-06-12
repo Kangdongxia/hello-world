@@ -1,0 +1,44 @@
+<template>
+  <div>
+    <i-form :model="formValidate" :rules="ruleValidate" ref="iForm">
+       <i-form-item label="用户名" prop="name">
+          <i-input v-model="formValidate.name"></i-input> 
+       </i-form-item> 
+       <i-form-item label="邮箱" prop="mail">
+          <i-input v-model="formValidate.mail"></i-input>
+       </i-form-item>
+    </i-form>
+    <at-button @click="validateForm">提交</at-button>
+  </div>
+</template>
+<script>
+  import iForm from '../components/Form/form.vue'
+  import iFormItem from '../components/Form/formItem.vue'
+  import iInput from '../components/Form/input.vue'
+
+  export default {
+   components:{iForm,iFormItem,iInput },
+   data(){
+       return {
+         formValidate:{
+            name:'',
+            mail:''
+         },
+         ruleValidate:{
+            name:[
+              { required: true, message:'用户名不能为空', trigger:'blur'}
+            ],
+            mail:[
+              { required:true, message:'邮箱不能为空', trigger:'blur'},
+              { type: 'email', message:'邮箱格式不正确', trigger:'blur'} 
+            ]
+         }
+       } 
+   },
+   methods:{
+     validateForm(){
+       this.$refs.ruleValidate.valiadteForm();
+     }
+   }
+  }
+</script>
