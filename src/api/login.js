@@ -1,7 +1,7 @@
 import request from "@/utils/request";
 
 export function login(username, password) {
-  console.log('lonining');
+  console.log('logining');
   return request({
     url: '/user/login',
     method: 'post',

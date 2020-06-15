@@ -26,7 +26,7 @@ const users = {
 
 export default {
   login: res => {
-    console.log('res', res)
+    console.log('loginRes', res)
     const { username } = { 'username': res.body.substring(9,15)+'-token'}
     const data = users[username]
     console.log('data', data)

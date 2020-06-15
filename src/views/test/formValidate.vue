@@ -8,13 +8,13 @@
           <i-input v-model="formValidate.mail"></i-input>
        </i-form-item>
     </i-form>
-    <at-button @click="validateForm">提交</at-button>
+    <el-button @click="validateForm">提交</el-button>
   </div>
 </template>
 <script>
-  import iForm from '../components/Form/form.vue'
-  import iFormItem from '../components/Form/formItem.vue'
-  import iInput from '../components/Form/input.vue'
+  import iForm from '../../components/Form/form.vue'
+  import iFormItem from '../../components/Form/formItem.vue'
+  import iInput from '../../components/Form/input.vue'
 
   export default {
    components:{iForm,iFormItem,iInput },

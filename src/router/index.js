@@ -38,22 +38,22 @@ export const constantRouterMap = [
       component: () => import('@/views/dashboard/index')
     }]
   },
-  {
-    path: '/eChartsBar',
-    component: Layout,
-    redirect: '/eCharts/bar',
-    name: '柱状图',
-    meta: { title: '柱状图'},
-    children: [
-      {
-        //path: '/eCharts/bar/:name',
-        path: '/eCharts/bar',
-        name: '柱状图995462',
-        component: () => import('@/components/eCharts/bar'),
-        meta: { title: '柱状图', icon: 'form'}
-      }
-    ]
-  },
+  // {
+  //   path: '/eChartsBar',
+  //   component: Layout,
+  //   redirect: '/eCharts/bar',
+  //   name: '柱状图',
+  //   meta: { title: '柱状图'},
+  //   children: [
+  //     {
+  //       //path: '/eCharts/bar/:name',
+  //       path: '/eCharts/bar',
+  //       name: '柱状图995462',
+  //       component: () => import('@/components/eCharts/bar'),
+  //       meta: { title: '柱状图', icon: 'form'}
+  //     }
+  //   ]
+  // },
   // {
   //   path: '/tinymce',
   //   component: Layout,
@@ -82,20 +82,20 @@ export const constantRouterMap = [
       }
     ]
   },
-  {
-    path: '/brotherNodePassValue',
-    component: Layout,
-    redirect: '/brotherNodePassValue/index',
-    name: 'brotherNodePassValue',
-    meta: { title: '兄弟节点传值'},
-    children: [
-      {
-        path: '/brotherNodePassValue/index',
-        component: () => import('@/components/brotherNodePassValue/index'),
-        meta: { title: '兄弟节点传值', icon: 'form'}
-      }
-    ]
-  },
+  // {
+  //   path: '/brotherNodePassValue',
+  //   component: Layout,
+  //   redirect: '/brotherNodePassValue/index',
+  //   name: 'brotherNodePassValue',
+  //   meta: { title: '兄弟节点传值'},
+  //   children: [
+  //     {
+  //       path: '/brotherNodePassValue/index',
+  //       component: () => import('@/components/brotherNodePassValue/index'),
+  //       meta: { title: '兄弟节点传值', icon: 'form'}
+  //     }
+  //   ]
+  // },
   {
     path: '/timePicker',
     component: Layout,
@@ -139,20 +139,20 @@ export const constantRouterMap = [
       }
     ]
   }, 
-  {
-    path: '/swiperDemo',
-    component: Layout,
-    redirect: '/timeLine/swiperDemo',
-    name: 'swiperDemo',
-    meta: { title: 'swiperDemo'},
-    children: [
-      {
-        path: '/timeLine/swiperDemo',
-        component: () => import('@/components/timeLine/swiperDemo'),
-        meta: { title: 'swiper例子', icon: 'form'}
-      }
-    ]
-  },
+  // {
+  //   path: '/swiperDemo',
+  //   component: Layout,
+  //   redirect: '/timeLine/swiperDemo',
+  //   name: 'swiperDemo',
+  //   meta: { title: 'swiperDemo'},
+  //   children: [
+  //     {
+  //       path: '/timeLine/swiperDemo',
+  //       component: () => import('@/components/timeLine/swiperDemo'),
+  //       meta: { title: 'swiper例子', icon: 'form'}
+  //     }
+  //   ]
+  // },
   {
     path:'/BubbleBox',
     component:Layout,
