@@ -1,7 +1,7 @@
 import request from "@/utils/request";
 
 export function login(username, password) {
-  console.log('logining');
+  //console.log('logining');
   return request({
     url: '/user/login',
     method: 'post',
@@ -13,7 +13,7 @@ export function login(username, password) {
 }
 
 export function getInfo(token) {
-  console.log('token',token);
+  //console.log('token',token);
   return request({
     url: '/user/getInfo',
     method: 'get',

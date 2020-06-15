@@ -27,9 +27,10 @@ const users = {
 export default {
   login: res => {
     console.log('loginRes', res)
-    const { username } = { 'username': res.body.substring(9,15)+'-token'}
+    //const { username } = { 'username': res.body.substring(9,15)+'-token'}
+    const { username } = { 'username': tokens[res.body.substring(9,15)].token}
     const data = users[username]
-    console.log('data', data)
+    //console.log('data', data)
     if (data) {
       return {
         status: 200,
