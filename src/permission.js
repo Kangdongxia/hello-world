@@ -18,7 +18,7 @@ const whiteList = ['/login'] // 不重定向白名单
 //在跳转之前执行
 router.beforeEach((to, from, next) => {
   NProgress.start() // start progress bar
-  console.log('token-data',getToken());
+  //console.log('token-data',getToken());
   if (getToken()) {
     // determine if there has token
     /* has token*/

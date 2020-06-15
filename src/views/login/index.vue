@@ -138,7 +138,7 @@ export default {
         if (valid) {
           this.loading = true;
           this.$store .dispatch("Login", this.loginForm).then(response => {
-              console.log('response',response);
+              //console.log('response',response);
               this.loading = false;
               if ((response!==undefined)&&(response!=="")) {
                 var message = response;
