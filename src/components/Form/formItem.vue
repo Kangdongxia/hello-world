@@ -5,23 +5,23 @@
        <slot></slot>
      </div>
    </div>
-<template>
+</template>
 <script>
-  import Emitter from '../../mixins/emitters.js'
+  import Emitter from '../../mixins/emitter.js'
   export default {
      name:'iFormItem',
-     mixins:[ Emitter ]
+     mixins:[ Emitter ],
      mounted(){
        if(this.prop){
-         this.$dispatch('iForm','on-form_item-add',this)
+         this.dispatch('iForm','on-form_item-add',this)
        }     
      },
      beforeDestory(){
        if(this.prop){
-         this.$dispatch('iForm','on-form_item-remove',this)
+         this.dispatch('iForm','on-form_item-remove',this)
        }     
-     }
-     props"{
+     },
+     props:{
        label:{
          type:String,
          default:''  

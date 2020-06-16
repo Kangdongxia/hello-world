@@ -111,20 +111,20 @@ export const constantRouterMap = [
       }
     ]
   },
-  {
-    path: '/verticalTimeLine',
-    component: Layout,
-    redirect: '/timeLine/vertical',
-    name: 'verticalTimeLine',
-    meta: { title: '纵向时间轴'},
-    children: [
-      {
-        path: '/timeLine/vertical',
-        component: () => import('@/components/timeLine/vertical'),
-        meta: { title: '纵向时间轴', icon: 'form'}
-      }
-    ]
-  },
+  // {
+  //   path: '/verticalTimeLine',
+  //   component: Layout,
+  //   redirect: '/timeLine/vertical',
+  //   name: 'verticalTimeLine',
+  //   meta: { title: '纵向时间轴'},
+  //   children: [
+  //     {
+  //       path: '/timeLine/vertical',
+  //       component: () => import('@/components/timeLine/vertical'),
+  //       meta: { title: '纵向时间轴', icon: 'form'}
+  //     }
+  //   ]
+  // },
   {
     path: '/horizontalTimeLine',
     component: Layout,
@@ -170,7 +170,7 @@ export const constantRouterMap = [
     path: '/test',
     component: Layout,
     name: '练习样例',
-    meta: { title: '练习样例'},
+    meta: { title: '练习样例',icon: 'list' },
     children: [
       {
         path: '/test/jigsaw',
@@ -180,7 +180,12 @@ export const constantRouterMap = [
       {
         path: '/test/formValidate',
         component: () => import('@/views/test/formValidate'),
-        meta: { title: '表单校验', icon: 'nested'}
+        meta: { title: '表单校验', icon: 'form'}
+      },
+      {
+        path: '/test/collapseList',
+        component: () => import('@/views/test/collapseList'),
+        meta: { title: '折叠卡片', icon: 'list'}
       }
     ]
   }
