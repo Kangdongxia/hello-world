@@ -4,6 +4,7 @@ import app1 from './modules/app'
 import user2 from './modules/user'
 import permission3 from './modules/permission'
 import tabledata from './modules/tabledata'
+import collapse_item from './modules/collapse'
 import getters from "./getters";
 Vue.use(Vuex);
 
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     app:app1,
     user:user2,
     tabledata:tabledata,
-    permission:permission3
+    permission:permission3,
+    collapse:collapse_item
   }
 });

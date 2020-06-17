@@ -137,7 +137,7 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true;
-          this.$store .dispatch("Login", this.loginForm).then(response => {
+          this.$store.dispatch("Login", this.loginForm).then(response => {
               //console.log('response',response);
               this.loading = false;
               if ((response!==undefined)&&(response!=="")) {

@@ -32,8 +32,7 @@ const tableData = {
             let loginFlag = parseInt(response.data);
             // eslint-disable-next-line eqeqeq
             if ((status === 100)&&(loginFlag===1)) {
-                let tableList = response.userList;
-               
+                let tableList = response.userList;  
                 resolve(tableList);       
             } else {
               reject(0);

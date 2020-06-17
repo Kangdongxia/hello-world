@@ -18,6 +18,7 @@
   //主题被注释直接富文本框不出现 ,console控制台报错（Uncaught SyntaxError: Unexpected token '<'）
   /*被注释后在Network部分theme.js对应的Preview可以看到关于theme.js如下提示
   We're sorry but hello-world doesn't work properly without JavaScript enabled. Please enable it to continue.*/
+  import 'tinymce/icons/default/icons.js' //解决图标为not found的问题
   import 'tinymce/themes/silver' 
   //插件来自于node_modules文件夹
   import 'tinymce/plugins/link' //链接插件

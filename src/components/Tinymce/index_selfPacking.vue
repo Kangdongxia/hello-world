@@ -11,8 +11,7 @@
       <el-button type="primary" @click="clear">清空</el-button>
       <el-button type="success" @click="getValue">获取值</el-button>
       <el-button type="danger" @click="disable">{{disabledTip}}</el-button>
-    </div>
-    
+    </div>   
 </template>
 <script>
  

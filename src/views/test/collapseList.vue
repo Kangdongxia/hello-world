@@ -1,89 +1,83 @@
 <template>
    <div id="cardList">
-      <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListOne" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
+      <div class="singleItem" v-for="(item,index) in cardData" :key="index">
+          <header>
+             <div class="title">{{ item.title }}</div>
+             <div class="subTitle">{{ item.cardList.length }} techniques</div>
+          </header>
+          <main>
+            <cardItem v-for="(item,index) in item.cardList" :key="index" :title="item.title" :detailList="item.detailList">
+            </cardItem> 
+          </main>        
       </div>
-      <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListTwo" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div> 
-     <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListOne" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div>
-      <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListTwo" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div> 
-      <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListOne" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div>
-      <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListTwo" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div> 
-      <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListOne" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div>
-      <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListTwo" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div> 
-     <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListOne" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div>
-      <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListTwo" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div> 
-      <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListOne" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div>
-      <div class="singleItem">
-          <cardItem v-for="(item,index) in cardListTwo" :key="index" :title="item.title" :detailList="item.detailList">
-          </cardItem>   
-      </div>       
    </div>
 </template>
 <script>
   import collapseItem from '../../components/collapseCard/collapseItem'
+  import { mapState } from 'vuex'
   export default {
     data(){
-      return {
-        cardListOne:[
-          {
-            title:'Command and Scripting interpreter',
-            detailList:['PowerShell','AppleScript','Windows Command Shell','Bash','VBScript','Python']   
-          },
-          {
-            title:'Phishing',
-            detailList:['Spearphishing Attachment','Spearphishing Link','Spearphishing via Service']   
-          },
-          {
-            title:'Vaild Accounts',
-            detailList:['Default Accounts','Domain Accounts','Local Accounts','Cloud Accounts']   
-          },
-          {
-            title:'Driver-by Compromise',
-            detailList:[]  
-          }  
-        ],
-         cardListTwo:[
-          {
-            title:'Phishing',
-            detailList:['Spearphishing Attachment','Spearphishing Link','Spearphishing via Service']   
-          }
-        //   {
-        //     title:'Driver-by Compromise',
-        //     detailList:[]  
-        //   }  
-        ]
+      return {   
+        cardData:[]
       }    
+    },
+    computed:{
+      ...mapState({
+        cardListOne: state => state.collapse.cardListOne,
+        cardListTwo: state => state.collapse.cardListTwo
+      })
+    },
+    mounted(){
+      this.cardData = [
+        {
+          title:'initial Access',
+          cardList:this.cardListOne
+        },
+        {
+          title:'Execution',
+          cardList:this.cardListTwo
+        },
+        {
+          title:'initial Access',
+          cardList:this.cardListOne
+        },
+        {
+          title:'Execution',
+          cardList:this.cardListTwo
+        },
+        {
+          title:'initial Access',
+          cardList:this.cardListOne
+        },
+        {
+          title:'Execution',
+          cardList:this.cardListTwo
+        },
+        {
+          title:'initial Access',
+          cardList:this.cardListOne
+        },
+        {
+          title:'Execution',
+          cardList:this.cardListTwo
+        },
+        {
+          title:'initial Access',
+          cardList:this.cardListOne
+        },
+        {
+          title:'Execution',
+          cardList:this.cardListTwo
+        },
+        {
+          title:'initial Access',
+          cardList:this.cardListOne
+        },
+        {
+          title:'Execution',
+          cardList:this.cardListTwo
+        }
+      ]  
     },
     components:{
       cardItem:collapseItem  
@@ -97,7 +91,20 @@
    display:inline-flex;
    overflow-x: auto !important;
    .singleItem{
-     margin:10px;  
+     margin:10px;
+     header{
+       text-align:center;
+       margin-bottom: 7px;
+       .title{
+         font-size:16px;
+         color:#4F7CAC;
+         margin-bottom:5px;
+       }
+       .subTitle{
+         color:#39434C;
+         font-size:13px;
+       }
+     }  
    }
  }
 </style>

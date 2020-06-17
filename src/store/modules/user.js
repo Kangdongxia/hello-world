@@ -9,7 +9,6 @@ const user = {
     id: 0,
     roles: []
   },
-
   mutations: {
     SET_TOKEN: (state, token) => {
       state.token = token;
