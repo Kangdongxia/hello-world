@@ -77,7 +77,17 @@
           title:'Execution',
           cardList:this.cardListTwo
         }
-      ]  
+      ];
+      this.testObjectAssign();  
+    },
+    methods:{
+      testObjectAssign(){
+        let a = {};
+        let b = { title:'11'};
+        let c = { icon:'666'};
+        let d = Object.assign(a,b,c);
+        console.log('d',d);
+      }
     },
     components:{
       cardItem:collapseItem  

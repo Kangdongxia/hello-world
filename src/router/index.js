@@ -29,10 +29,7 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/dashboard',
     name: 'Dashboard',
-    meta: {
-      title: '首页',
-      icon: 'dashboard'
-    },
+    meta: {title: '首页',icon: 'dashboard'},
     children: [{
       path: 'dashboard',
       component: () => import('@/views/dashboard/index')
@@ -78,7 +75,7 @@ export const constantRouterMap = [
       {
         path: '/Tinymce/index3',
         component: () => import('@/components//Tinymce/index_selfPacking'),
-        meta: { title: '自己封装Tinymce例子', icon: 'form'}
+        meta: { title: '自己封装的Tinymce例子', icon: 'form'}
       }
     ]
   },
@@ -160,7 +157,7 @@ export const constantRouterMap = [
     meta:{ title: 'bubbleBoxDemo'},
     children:[
       {
-        path:'@/views/bubble/index',
+        path:'/bubble/index',
         component:() => import('@/views/bubble/index'),
         meta:{ title: '气泡框',icon: 'list'}
       }
@@ -198,7 +195,6 @@ export default new Router({
 })
 
 export const asyncRouterMap = [
-  /** When your routing table is too long, you can split it into small modules**/
   {
     path: '/treeStructure',
     component: Layout,

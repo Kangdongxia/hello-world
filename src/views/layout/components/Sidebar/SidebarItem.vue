@@ -1,6 +1,6 @@
 <template>
   <div v-if="!item.hidden" class="menu-wrapper">
-
+    <!--只有一个子节点-->
     <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)&&!item.alwaysShow">
       <app-link :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
@@ -8,7 +8,7 @@
         </el-menu-item>
       </app-link>
     </template>
-
+    <!--有多个子节点-->
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title">
         <item :meta="item.meta" />
@@ -21,7 +21,6 @@
         :base-path="resolvePath(child.path)"
         class="nest-menu" />
     </el-submenu>
-
   </div>
 </template>
 
@@ -30,7 +29,6 @@ import path from 'path'
 import { isExternal } from '@/utils/validate'
 import Item from './Item'
 import AppLink from './Link'
-
 export default {
   name: 'SidebarItem',
   components: { Item, AppLink },
@@ -84,6 +82,10 @@ export default {
       if (isExternal(routePath)) {
         return routePath
       }
+      // console.log('basePath',this.basePath);
+      // console.log('routePath',routePath);
+      let value = path.resolve(this.basePath, routePath);
+      console.log('value',value);
       return path.resolve(this.basePath, routePath)
     }
   }
