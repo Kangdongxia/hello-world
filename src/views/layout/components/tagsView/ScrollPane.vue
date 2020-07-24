@@ -89,9 +89,14 @@ export default {
     .el-scrollbar__bar {
       bottom: 0px;
     }
+    .el-scrollbar__bar.is-horizontal{
+        .el-scrollbar__thumb{
+          width:90%;
+        }
+      }
     .el-scrollbar__wrap {
       height: 54px;
-      width:100%;
+      width:100%;  
     }
   }
 }

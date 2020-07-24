@@ -28,14 +28,12 @@ export const constantRouterMap = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    name: 'Dashboard',
-    meta: {
-      title: '首页',
-      icon: 'dashboard'
-    },
+    meta: { title: '首页',icon: 'dashboard'},
     children: [{
-      path: 'dashboard',
-      component: () => import('@/views/dashboard/index')
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: () => import('@/views/dashboard/index'),
+      meta: { title: '首页', icon: 'form'}
     }]
   },
   // {
@@ -77,6 +75,7 @@ export const constantRouterMap = [
     children: [
       {
         path: '/Tinymce/index3',
+        name: '自己封装Tinymce例子',
         component: () => import('@/components//Tinymce/index_selfPacking'),
         meta: { title: '自己封装Tinymce例子', icon: 'form'}
       }
@@ -134,6 +133,7 @@ export const constantRouterMap = [
     children: [
       {
         path: '/timeLine/horizontal',
+        name: 'horizontalTimeLine',
         component: () => import('@/components/timeLine/horizontalSwiper'),
         meta: { title: '横向时间轴', icon: 'form'}
       }
@@ -161,6 +161,7 @@ export const constantRouterMap = [
     children:[
       {
         path:'@/views/bubble/index',
+        name:'bubbleBoxDemo',
         component:() => import('@/views/bubble/index'),
         meta:{ title: '气泡框',icon: 'list'}
       }
@@ -174,16 +175,19 @@ export const constantRouterMap = [
     children: [
       {
         path: '/test/jigsaw',
+        name:'拼图游戏',
         component: () => import('@/views/test/jigsaw'),
         meta: { title: '拼图游戏', icon: 'nested'}
       },
       {
         path: '/test/formValidate',
+        name:'表单校验',
         component: () => import('@/views/test/formValidate'),
         meta: { title: '表单校验', icon: 'form'}
       },
       {
         path: '/test/collapseList',
+        name:'折叠卡片',
         component: () => import('@/views/test/collapseList'),
         meta: { title: '折叠卡片', icon: 'list'}
       }
