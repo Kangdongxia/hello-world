@@ -4,6 +4,7 @@
     <sidebar class="sidebar-container"/>
     <div class="main-container">
       <navbar/>
+      <tags-view />
       <app-main/>
     </div>
   </div>
@@ -11,12 +12,14 @@
 <script>
 import { Navbar, Sidebar, AppMain } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
+import tagsView from './components/tagsView/index.vue'
 export default {
   name: 'Layout',
   components: {
     Navbar,
     Sidebar,
-    AppMain
+    AppMain,
+    tagsView
   },
   mixins: [ResizeMixin],
   computed: {

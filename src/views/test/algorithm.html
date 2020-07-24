@@ -1,0 +1,20 @@
+<html>
+   <head></head>
+   <body></body> 
+   <script>
+      function test(){ 
+        let originStr = "algorithm"; 
+        let originArr = Array.from(originStr);
+        let length = originArr.length;
+        let count = Math.floor( originArr.length / 2);
+        for(let i = 0; i < count; i++){
+            let temp = originArr[length - i - 1];
+            originArr[length - i - 1] = originArr[i];
+            originArr[i] = temp;
+        }
+        let formatStr = originArr.join('');
+        console.log('formatStr',formatStr);
+      }
+      test();   
+   </script>
+</html>
