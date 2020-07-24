@@ -21,6 +21,10 @@ import SidebarItem from './SidebarItem'
 
 export default {
   components: { SidebarItem },
+  created(){
+    console.log('router',this.routes);
+    console.log('routes------',this.$route.path); 
+  },
   computed: {
     ...mapGetters([
       'sidebar'
