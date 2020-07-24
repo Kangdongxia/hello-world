@@ -21,11 +21,7 @@
     "less-loader": "^6.1.1",
     "node-sass": "^4.13.0",
     "nprogress": "0.2.0",
-<<<<<<< HEAD
-    "tinymce": "^5.2.0",
-=======
     "tinymce": "^5.3.2",
->>>>>>> 3a071afbb894b683e6282e2f8d33c719c67f8dde
     "uglifyjs-webpack-plugin": "^2.2.0",
     "uni-time-line": "^1.0.3",
     "vue": "^2.6.10",

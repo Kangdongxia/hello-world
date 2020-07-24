@@ -28,12 +28,7 @@ export const constantRouterMap = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-<<<<<<< HEAD
     meta: { title: '首页',icon: 'dashboard'},
-=======
-    name: 'Dashboard',
-    meta: {title: '首页',icon: 'dashboard'},
->>>>>>> 3a071afbb894b683e6282e2f8d33c719c67f8dde
     children: [{
       path: '/dashboard',
       name: 'Dashboard',
@@ -165,12 +160,8 @@ export const constantRouterMap = [
     meta:{ title: 'bubbleBoxDemo'},
     children:[
       {
-<<<<<<< HEAD
         path:'@/views/bubble/index',
         name:'bubbleBoxDemo',
-=======
-        path:'/bubble/index',
->>>>>>> 3a071afbb894b683e6282e2f8d33c719c67f8dde
         component:() => import('@/views/bubble/index'),
         meta:{ title: '气泡框',icon: 'list'}
       }
