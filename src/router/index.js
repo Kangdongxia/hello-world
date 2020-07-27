@@ -79,6 +79,18 @@ export const constantRouterMap = [
                 name:'d3样例',
                 component: () => import('@/views/test/d3Demo'),
                 meta: { title: 'd3样例', icon: 'list'}
+              },
+              {
+                path: 'd2Demo',
+                name:'d3样例',
+                component: () => import('@/views/test/d3Demo'),
+                meta: { title: 'd3样例', icon: 'list'}
+              },
+              {
+                path: 'd1Demo',
+                name:'d3样例',
+                component: () => import('@/views/test/d3Demo'),
+                meta: { title: 'd3样例', icon: 'list'}
               }
             ]
         }
