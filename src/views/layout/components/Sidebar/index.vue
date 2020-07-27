@@ -16,22 +16,26 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 import variables from '@/styles/variables.scss'
 import SidebarItem from './SidebarItem'
 
 export default {
   components: { SidebarItem },
   created(){
-    console.log('router',this.routes);
-    console.log('routes------',this.$route.path); 
+    //console.log('routes',this.routes);
+    // console.log('routes------',this.$route.path); 
   },
   computed: {
     ...mapGetters([
       'sidebar'
     ]),
-    routes() {
-      return this.$router.options.routes
-    },
+    ...mapState({    
+      routes: state => state.permission.routes,
+    }),
+    // routes() {
+    //   return this.$router.options.routes
+    // },
     variables() {
       return variables
     },

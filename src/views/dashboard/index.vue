@@ -78,7 +78,7 @@ export default {
           currentPage:1,
           currentPerNum:6
         }
-        this.$store .dispatch("GetTableInfo", {params}).then(response => {
+        this.$store.dispatch("GetTableInfo", {params}).then(response => {
             if (response===0) {
                 var message = response;
                 this.options = {

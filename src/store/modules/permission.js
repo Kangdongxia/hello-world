@@ -6,13 +6,14 @@ function hasPermission(roles, route) {
   if (route.meta && route.meta.roles) {
     // return roles.some(role => route.meta.roles.includes(role))
     // return roles.some(role => route.meta.roles.indexOf(role) >= 0)
-    return route.meta.roles.indexOf(roles) >= 0;
+    return route.meta.roles.indexOf(roles[0]) >= 0;
   } else {
     return true;
   }
 }
 
 export function filterAsyncRoutes(routes, roles) {
+  // console.log('roles',roles);
   const res = [];
   routes.forEach(route => {
     //console.log('route',route);

@@ -19,8 +19,8 @@
       :default-time="['12:00:13','8:07:00']"
       align="right">
     </el-date-picker>
-    <el-button @click="getInterValTime" type="primary" >转化时间</el-button>
-    <el-button @click="toOtherPart" type="primary" >跳转界面</el-button>
+    <el-button @click="getInterValTime" type="primary" plain>转化时间</el-button>
+    <el-button @click="toOtherPart" type="primary" plain>跳转界面</el-button>
   </div>
 </template>
 

@@ -154,7 +154,6 @@ export default {
                 };
                 this.showNotification = true;
               } else {
-                console.log('登录成功',this.redirect);
                 this.$router.push({ path: this.redirect || '/' })
                 //this.$router.push({ name:"timePicker" });
               }

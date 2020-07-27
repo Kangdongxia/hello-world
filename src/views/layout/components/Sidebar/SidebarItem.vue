@@ -85,7 +85,6 @@ export default {
       // console.log('basePath',this.basePath);
       // console.log('routePath',routePath);
       let value = path.resolve(this.basePath, routePath);
-      console.log('value',value);
       return path.resolve(this.basePath, routePath)
     }
   }

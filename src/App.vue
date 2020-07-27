@@ -35,7 +35,7 @@ export default {
 <!--此种配置下router下的index.js生效-->
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
