@@ -292,11 +292,8 @@ export default {
 <!--<style lang="less">
   .tags-view-container {
     height:31px;
-    //width:100%;
     margin:0 16px 8px 8px;
-    //border-bottom: 1px solid #d8dce5;
     border-bottom:none;
-    //padding:4px 0px;
     padding: 8px 0px 0px;
     //box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 3px 0 rgba(0, 0, 0, .04);
     .tags-view-wrapper {
@@ -355,7 +352,7 @@ export default {
   .tags-view-wrapper {
     .tags-view-item {
       .el-icon-close {
-        width: 20px;
+        width: 20px; 
         height: 20px;
         vertical-align: 2px;
         border-radius: 50%;

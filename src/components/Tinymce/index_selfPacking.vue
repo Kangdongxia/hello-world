@@ -43,7 +43,7 @@
         this.disabledTip = this.disabled ? '恢复' : '禁用';
       },
       getValue(){
-        let value = this.$refs.tinyMce.sendValue();
+        let value = this.$refs.tinyMce.sendValue('eeee');
         console.log('value',value);
       },
       //改变Value值

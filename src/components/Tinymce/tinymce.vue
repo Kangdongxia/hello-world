@@ -133,14 +133,15 @@
         //  sendValue(){
         //     this.$emit('getValue', this.myValue);
         //  },
-         sendValue(){
+         sendValue(flag){
+           console.log('flag---88',flag)
            return  this.myValue;
          },
          clear(){
-             this.myValue = '';
+            this.myValue = '';
          },
          changeValue(){
-             this.$emit('changeValue');
+            this.$emit('changeValue');
          }
      }     
   }

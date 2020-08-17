@@ -12,6 +12,7 @@
      name:'iFormItem',
      mixins:[ Emitter ],
      mounted(){
+       //不传入prop,则不进行校验，也无需缓存
        if(this.prop){
          this.dispatch('iForm','on-form_item-add',this)
        }     

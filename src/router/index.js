@@ -33,6 +33,12 @@ export const constantRouterMap = [
            meta: {title: '首页',icon: 'dashboard'},
         },
         {
+          path: 'tinymce2',
+          name: '自己封装Tinymce例子',
+          meta: { title: '自己封装的Tinymce例子', icon: 'form'},
+          component: () => import('@/components//Tinymce/index_selfPacking')
+        },
+        {
             path: 'timePicker',
             name: '时间选择器8956',
             component: () => import('@/components/timePicker/index'),
@@ -76,18 +82,6 @@ export const constantRouterMap = [
               },
               {
                 path: 'd3Demo',
-                name:'d3样例',
-                component: () => import('@/views/test/d3Demo'),
-                meta: { title: 'd3样例', icon: 'list'}
-              },
-              {
-                path: 'd2Demo',
-                name:'d3样例',
-                component: () => import('@/views/test/d3Demo'),
-                meta: { title: 'd3样例', icon: 'list'}
-              },
-              {
-                path: 'd1Demo',
                 name:'d3样例',
                 component: () => import('@/views/test/d3Demo'),
                 meta: { title: 'd3样例', icon: 'list'}

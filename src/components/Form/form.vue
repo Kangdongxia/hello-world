@@ -25,12 +25,14 @@
       })
     },
     props:{
+      //表单控件绑定的数据对象
       model:{
         type:Object,
         default:function(){
             return null
         }  
       },
+      //表单校验规则
       rules:{
         type:Object,
         default:function(){
