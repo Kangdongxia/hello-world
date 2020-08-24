@@ -57,7 +57,7 @@ export const constantRouterMap = [
             meta:{ title: '气泡框',icon: 'list'}
         },
         {
-            path: 'test',
+            path: 'excerise',
             component: middle,
             name: '练习样例',
             meta: { title: '练习样例',icon: 'list' },
@@ -65,25 +65,31 @@ export const constantRouterMap = [
               {
                 path: 'jigsaw',
                 name:'拼图游戏',
-                component: () => import('@/views/test/jigsaw'),
+                component: () => import('@/views/excerise/jigsaw'),
                 meta: { title: '拼图游戏', icon: 'nested'}
               },
               {
                 path: 'formValidate',
                 name:'表单校验',
-                component: () => import('@/views/test/formValidate'),
+                component: () => import('@/views/excerise/formValidate'),
                 meta: { title: '表单校验', icon: 'form'}
+              },
+              {
+                path: 'checkbox',
+                name:'多选框学习样例',
+                component: () => import('@/views/excerise/checkbox'),
+                meta: { title: '多选框学习样例', icon: 'form'}
               },
               {
                 path: 'collapseList',
                 name:'折叠卡片',
-                component: () => import('@/views/test/collapseList'),
+                component: () => import('@/views/excerise/collapseList'),
                 meta: { title: '折叠卡片', icon: 'list'}
               },
               {
                 path: 'd3Demo',
                 name:'d3样例',
-                component: () => import('@/views/test/d3Demo'),
+                component: () => import('@/views/excerise/d3Demo'),
                 meta: { title: 'd3样例', icon: 'list'}
               }
             ]

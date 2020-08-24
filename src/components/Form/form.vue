@@ -6,6 +6,11 @@
 <script>
   export default {
     name:"iForm",
+    provide(){
+      return {
+        form:this
+      }
+    },
     data(){
       return {
         itemList:[]
@@ -41,8 +46,33 @@
       }  
     },
     methods:{
-      valiadteForm(){
-        this.$broadcast('iFormItem','valudate_item');
+      validateForm(callback){
+        return new Promise((resolve) => {
+          let valid = true;
+          let count = 0;
+          this.itemList.forEach(item => {
+            //去掉空字符串试试 =>出错
+            //调用item.validate()方法，其中''为所传参数且只能传''，errorMessage为validate()的返回值
+            item.validate('',errorMessage => {
+              console.log('errorMessage',errorMessage);
+              if(!Object.is(errorMessage,'')){
+                valid = false;
+              }
+              if( ++count === this.itemList.length){
+                console.log('valid',valid);
+                resolve(valid);
+                if(typeof (callback) === 'function'){
+                  callback(valid);
+                }
+              }
+            });
+          });
+        })     
+      },
+      resetForm(){
+        this.itemList.forEach(item => {
+          item.resetField();
+        })
       }
     }  
   }

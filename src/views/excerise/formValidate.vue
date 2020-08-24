@@ -9,6 +9,7 @@
        </i-form-item>
     </i-form>
     <el-button @click="validateForm">提交</el-button>
+    <el-button @click="resetForm">重置</el-button>
   </div>
 </template>
 <script>
@@ -17,12 +18,12 @@
   import iInput from '../../components/Form/input.vue'
 
   export default {
-   components:{iForm,iFormItem,iInput },
+   components:{iForm, iFormItem, iInput},
    data(){
        return {
          formValidate:{
-            name:'',
-            mail:''
+            name:'kdx',
+            mail:'2557381271@qq.com'
          },
          ruleValidate:{
             name:[
@@ -37,7 +38,19 @@
    },
    methods:{
      validateForm(){
-       this.$refs.ruleValidate.valiadteForm();
+       this.$refs.iForm.validateForm((valid) => {
+         if(valid){
+           console.log('验证成功');
+         }else{
+           console.log('验证失败');
+         }
+       })
+      //  .catch((e) => {
+      //    console.log('error',e);
+      //  })
+     },
+     resetForm(){
+       this.$refs.iForm.resetForm();
      }
    }
   }
