@@ -1,11 +1,13 @@
 <template>
    <div id="formItem">
-     <span v-if="isRequired" class='i-form-item-label-required'> * </span>
-     <label v-if="label">{{ label }}</label>
-     <div>
-       <slot></slot>
-       <span v-show="validateState === 'fail'" class="i-form-item-message"> {{ validateMessage }}</span>
-     </div>
+     <div class="content">
+        <span v-if="isRequired" class='i-form-item-label-required'> * </span>
+        <label v-if="label">{{ label }}</label>
+        <span class="contentInfo">
+          <slot></slot>
+          <span v-show="validateState === 'fail'" class="i-form-item-message"> {{ validateMessage }}</span>
+        </span>
+     </div>   
    </div>
 </template>
 <script>
@@ -87,6 +89,7 @@
         const validator = new AsyncValidator(descriptor); //form中prop对应的校验规则
         let model = {};
         model[this.prop] = this.fieldValue; //form中prop对应的值
+        // console.log('model',model);
         validator.validate(model, { firstFields: true }, errors => {
           this.validateState = errors ? 'fail' : 'success';
           this.validateMessage = errors ? errors[0].message : '';
@@ -119,7 +122,19 @@
      }
   } 
 </script>
-<style>
+<style lang="less">
+ #formItem{
+   margin-bottom:10px;
+   .content{
+     display:inline-flex;
+     label{
+       width:80px;
+     }
+    .contentInfo{
+      margin-left:10px;
+    }
+   } 
+ }
  .i-form-item-label-required{
    content:'*';
    color:red;

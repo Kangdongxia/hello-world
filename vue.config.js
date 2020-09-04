@@ -1,6 +1,7 @@
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const { info } = require("@vue/cli-shared-utils");
 const path = require("path");
+const webpack = require('webpack');
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
@@ -45,6 +46,12 @@ module.exports = {
           },
           sourceMap: false, //不要sourceMap
           parallel: true //多于一个内核，并行
+        }),
+        new webpack.ProvidePlugin({
+          $: "jquery",
+          jQuery: "jquery",
+          jquery: "jquery",
+          "window.jQuery": "jquery"
         })
       );
       config.plugins = [...config.plugins, ...plugins];

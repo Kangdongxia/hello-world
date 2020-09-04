@@ -77,3 +77,8 @@
     }  
   }
 </script>
+<style>
+ #Form{
+   padding:10px;
+ }
+</style>

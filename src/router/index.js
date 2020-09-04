@@ -91,6 +91,12 @@ export const constantRouterMap = [
                 name:'d3样例',
                 component: () => import('@/views/excerise/d3Demo'),
                 meta: { title: 'd3样例', icon: 'list'}
+              },
+              {
+                path: '锚点Demo',
+                name:'锚点样例',
+                component: () => import('@/views/excerise/anchorPointDemo'),
+                meta: { title: '锚点样例', icon: 'list'}
               }
             ]
         }
